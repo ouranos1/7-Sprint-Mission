@@ -1,43 +1,46 @@
-body{
+body {
   padding: 0;
   margin: 0;
-  font-family: Pretendard;
+  /* font-family: Pretendard; */
   border: 0;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
-p{
+p {
   margin: 0;
 }
 
-header{
+header {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  justify-content: space-between;
   align-items: center;
   --button-color: #3692ff;
-  --backgrount-color: #cfe5ff;
+  --background-color: #cfe5ff;
   --button-text-color: #ffffff;
   --header-title-text-color: #374151;
 }
 
-a{
-  cursor: pointer;
+a {
+  /* cursor: pointer; */
   text-decoration-line: none;
 }
 
-.button{
+.button {
   background-color: var(--button-color);
 }
 
-.first-layer{
-  background-color: var(--backgrount-color);
+.first-layer {
+  background-color: var(--background-color);
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.first-layer-container{
-  background-color: var(--backgrount-color);
+.first-layer-container {
+  background-color: var(--background-color);
   width: 1920px;
   height: 540px;
   background-image: url("images/home/hero-image.png");
@@ -46,18 +49,14 @@ a{
   background-position: 701px bottom;
 }
 
-.header-title{
+.header-title {
   margin-left: 360px;
   display: flex;
   margin-top: 70px;
   gap: 32px;
 }
 
-.header-size{
-  width: 1920px;
-}
-
-.header-title-text > p{
+.header-title-text > p {
   display: flex;
   gap: 32px;
   font-size: 40px;
@@ -66,7 +65,7 @@ a{
   color: var(--header-title-text-color);
   margin: 0 0 32px;
 }
-.header-title-text > .button{
+.header-title-text > .button {
   border-radius: 40px;
   padding: 16px 124px;
   color: var(--button-text-color);
@@ -74,20 +73,20 @@ a{
   line-height: 24px;
 }
 
-nav{
+nav {
   margin: 0 200px;
-  width: 100%;
+  max-width: 1920px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-nav > a > img{
+nav > a > img {
   width: 153px;
   height: 51px;
   margin-right: auto;
 }
-nav > .button{
+nav > .button {
   margin: 10px;
   border-radius: 8px;
   padding: 12px 20px 12px 20px;
@@ -97,64 +96,64 @@ nav > .button{
   
 }
 
-main{
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-section{
+section {
   width: 1200px;
   height: 720px;
   margin-top: 138px;
 }
 
-.container{
+.container {
   display: flex;
   gap: 64px;
 }
 
-.container > img{
+.container > img {
   width: 588px;
   height: 444px;
 }
 
-section{
+section {
   --section-h5-color: #3692ff;
   --section-h2-p-color: #374151;
 }
 
-.section-text{
+.section-text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
 }
 
-.section-text > h5{
+.section-text > h5 {
   font-size: 18px;
   color: var(--section-h5-color);
   line-height: 25.2px;
 }
-.section-text > h2{
+.section-text > h2 {
   font-size: 40px;
   line-height: 56px;
   color: var(--section-h2-p-color);
   font-weight: 700;
 }
-.section-text > p{
+.section-text > p {
   font-size: 24px;
   line-height: 28.8px;
   font-weight: 500;
   color: var(--section-h2-p-color);
 
 }
-#section2-text{
+#section2-text {
   align-items: flex-end;
   text-align: right;
 }
 
-footer{
+footer {
   --banner-background-color: #cfe5ff;
   --banner-p-color: #374151;
   --pang-end-background-color: #111827;
@@ -162,13 +161,13 @@ footer{
   --page-end-p2-color: #e5e7eb;
 }
 
-.banner{
+.banner {
   display: flex;
   justify-content: center;
   background-color: var(--banner-background-color);
 }
 
-.banner-container > p{
+.banner-container > p {
   margin: 214px 0;
   font-size: 40px;
   font-weight: 700;
@@ -176,7 +175,7 @@ footer{
   color: var(--banner-p-color);
 }
 
-.banner-container{
+.banner-container {
   width: 1200px;
   height: 540px;
   background-image: url("images/home/bottom-banner-image.png");
@@ -185,7 +184,7 @@ footer{
   background-position: 100% bottom;
 }
 
-.page-end{
+.page-end {
   background-color: var(--pang-end-background-color);
   display: flex;
   justify-content: space-between;
@@ -194,23 +193,23 @@ footer{
   padding:32px 200px 32px 200px;
 }
 
-.page-end > a > img{
+.page-end > a > img {
   width: 20px;
   height: 20px;
 }
 
-.p1{
+.p1 {
   color: var(--page-end-p1-color);
   font-size: 16px;
   font-weight: 400;
   line-height: 19.09px;
 }
-.p2{
+.p2 {
   display: flex;
   gap: 30px;
 }
 
-.p2 > a > p{
+.p2 > a{
   color: var(--page-end-p2-color);
   font-size: 16px;
   font-weight: 400;
