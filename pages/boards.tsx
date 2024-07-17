@@ -1,4 +1,5 @@
 import { CallArticles } from "./api/CallAPI";
+import { ChangeEvent } from "react";
 import style from "@/styles/Boards.module.scss";
 import BestArticles from "@/components/BestArticles";
 import Recentarticles from "@/components/Recentarticles/Recentarticles";
@@ -36,8 +37,8 @@ function boards() {
     setArticlesList(response.list);
   };
 
-  const KeyWordInput() => {
-    setKeyWord();
+  const KeyWordInput = (e: ChangeEvent<HTMLInputElement>) => {
+    setKeyWord(e.target.value);
   }
 
   const BestArticlesLoad = async () => {
@@ -59,6 +60,7 @@ function boards() {
           <button>글쓰기</button>
         </div>
         <div className={style.menuLayer}>
+          {/* <img src="../assets/images/home/ic_search.svg" alt="검색 아이콘"/> */}
           <input placeholder="검색할 상품을 입력해주세요" onChange={KeyWordInput}/>
           <DropDownSort option={option} setOrder={setOrder} />
         </div>

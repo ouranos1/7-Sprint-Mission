@@ -3,6 +3,7 @@ import favoriteIcon from "@/assets/images/logo/favoriteIcon.svg";
 import BlackImg from "@/assets/images/home/blankimg.jpg";
 import DateFomet from "@/utils/DateFormet";
 import Image from "next/image";
+import MaskIcon from "@/assets/images/home/maskicon.png"
 
 interface ArticlesProps {
   id: number;
@@ -18,7 +19,12 @@ interface ArticlesProps {
   };
 }
 
-function Article({ item }: { item: ArticlesProps }) {
+interface ArticleProps {
+    item: ArticlesProps;
+    order: "recent" | "like";
+}
+
+function Article({ item, order}: ArticleProps ) {
   return (
     <div className={style.articleData}>
       <div className={style.articleDescription}>
@@ -39,6 +45,12 @@ function Article({ item }: { item: ArticlesProps }) {
       </div>
       <div className={style.articleInfo}>
         <div>
+            {order === "recent" ? (
+                <Image className={style.userIcon} src={MaskIcon} alt="유저아이콘" width={24} height={24}/>
+                )
+                :
+                <div/>
+            }
           <p>{item.writer.nickname}</p>
           <Image src={favoriteIcon} alt="하트아이콘" width={16} height={16} />
           <p>{item.likeCount}</p>

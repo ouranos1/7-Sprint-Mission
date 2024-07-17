@@ -20,11 +20,11 @@ interface ArticlesProps {
 function Recentarticles({ datalist } : {datalist: ArticlesProps[]}) {
     return (
         <div className={style.recentArticlesLayer}>
-          <div className={style.dataLayer}>
-            {datalist.map((item) => (
-              <Article item={item} key={item.id} />
-            ))}
-          </div>
+          {datalist.map((item) => (
+            <div className={style.dataLayer}>
+              <Article item={item} order={"recent"} key={item.id} />
+            </div>
+          ))}
         </div>
     )
 }

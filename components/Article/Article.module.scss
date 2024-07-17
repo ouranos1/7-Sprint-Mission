@@ -29,6 +29,10 @@
     display: flex;
     justify-content: space-between;
 
+    .userIcon {
+      margin-right: 8px;
+    }
+
     p {
       font-size: 14px;
       font-weight: 400;
