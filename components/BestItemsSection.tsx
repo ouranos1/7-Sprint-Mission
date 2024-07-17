@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import favicon from "@/assets/images/logo/favoriteIcon.svg";
 import { CallItemSearch } from "@/pages/api/CallAPI";
-import style from "@/assets/BestItemsSection.module.css";
+import style from "@/styles/BestItemsSection.module.css";
 import Link from "next/link";
 import Image from "next/image";
 

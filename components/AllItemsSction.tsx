@@ -38,7 +38,6 @@ interface AllItemsResponse {
 }
 
 function AllItem({ item }: { item: AllItemProps }) {
-
   return (
     <div className={style.AllItem}>
       <Link href={`/items/${item.id}`}>
@@ -56,6 +55,8 @@ function AllItem({ item }: { item: AllItemProps }) {
   );
 }
 
+const option = {"recent" : "최신순", "favorite" : "좋아요순"};
+
 function AllItemsSection() {
   const [alltItemsList, setAllItemsList] = useState<AllItemProps[]>([]);
   const [itemCount, setItemCount] = useState<number>(getWidth());
@@ -63,7 +64,6 @@ function AllItemsSection() {
   const [poninter, setPoninter] = useState<number>(1);
   const [title, setTitle] = useState<string>("전체 상품");
   const [pageSize, setPageSize] = useState<number>(0);
-  const option = {"recent" : "최신순", "favorite" : "좋아요순"};
   const AllItemsLoad = async (ItemCount: number, Order: string) => {
     const response: AllItemsResponse = await CallItemSearch(poninter, ItemCount, Order);
     setAllItemsList(response.list);

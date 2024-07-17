@@ -1,17 +1,18 @@
 import { CallArticles } from "./api/CallAPI";
 import style from "@/styles/Boards.module.scss";
 import BestArticles from "@/components/BestArticles";
-import Recentarticles from "@/components/Recentarticles";
+import Recentarticles from "@/components/Recentarticles/Recentarticles";
+import DropDownSort from "@/components/DropDownSort";
 import { useEffect, useState } from "react";
 
 interface ArticlesProps {
   id: number;
   title: string;
   content: string;
-  image: File | null;
+  image: string | null;
   likeCount: number;
-  createAt: Date;
-  updateAt: Date;
+  createdAt: string;
+  updatedAt: string;
   writer: {
     id: number;
     nickname: string;
@@ -20,7 +21,10 @@ interface ArticlesProps {
 
 interface ArticlesResopnse {
   list: ArticlesProps[];
+  totalCount: number;
 }
+
+const option = { "recent" : "최신순", "like" : "좋아요순"};
 
 function boards() {
   const [keyWord, setKeyWord] = useState<string>();
@@ -31,22 +35,35 @@ function boards() {
     const response: ArticlesResopnse = await CallArticles(keyWord, order, 20);
     setArticlesList(response.list);
   };
+
+  const KeyWordInput() => {
+    setKeyWord();
+  }
+
   const BestArticlesLoad = async () => {
     const response: ArticlesResopnse = await CallArticles(undefined, "like", 3);
     setBestArticlesList(response.list);
-    console.log(response.list);
   };
 
   useEffect(() => {
     ArticlesLoad(keyWord, order);
     BestArticlesLoad();
-  }, []);
+  }, [keyWord, order]);
 
   return (
-    <div className={style.articleslayer}>
-      {/* <BestArticles articlesList={bestArticlesList}/> */}
-      <p>aaa</p>
-      <Recentarticles />
+    <div className={style.container}>
+      <div className={style.articleLayer}>
+        <BestArticles datalist={bestArticlesList} />
+        <div className={style.menuLayer}>
+          <p className={style.article}>게시글</p>
+          <button>글쓰기</button>
+        </div>
+        <div className={style.menuLayer}>
+          <input placeholder="검색할 상품을 입력해주세요" onChange={KeyWordInput}/>
+          <DropDownSort option={option} setOrder={setOrder} />
+        </div>
+        <Recentarticles datalist={articlesList} />
+      </div>
     </div>
   );
 }

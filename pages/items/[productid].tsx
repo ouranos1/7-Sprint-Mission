@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import heartIcon from "@/public/images/logo/favoriteIcon.svg";
+import heartIcon from "@/assets/images/logo/favoriteIcon.svg";
 import { CallItemDetail } from "@/pages/api/CallAPI";
 import { CallItemComment } from "@/pages/api/CallAPI";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import BackIcon from "@/public/images/home/ic_back.svg";
-import More from "@/public/images/home/ic_kebab.svg";
-import UserIcon from "@/public/images/home/maskicon.png"
-import NotComment from "@/public/images/home/not_comment.svg";
+import BackIcon from "@/assets/images/home/ic_back.svg";
+import More from "/assets/images/home/ic_kebab.svg";
+import UserIcon from "@/assets/images/home/maskicon.png"
+import NotComment from "/assets/images/home/not_comment.svg";
 import Image from "next/image";
 
 const ItemDetailLayer = styled.div`
