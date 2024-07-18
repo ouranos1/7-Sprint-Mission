@@ -2,17 +2,19 @@
     margin: 24px auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 0 24px ;
 
     .articleLayer {
-        max-width: 1200px;
-        
+        margin: 0 auto;
+        @media (768px < width < 1280px ) {
+            max-width: 696px;
+        }
         .menuLayer {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             margin-bottom: 24px;
+            position: relative;
             p {
                 font-size: 20px;
                 font-weight: 700;
@@ -20,10 +22,15 @@
                 color: #1f2937;
             }
 
+            .seachIcon {
+                position: absolute;
+                left: 20px;
+            }
+
             input {
                 background-color: #f3f4f6;
                 width: 100%;
-                padding: 9px 20px;
+                padding: 9px 44px;
                 margin-right: 16px;
                 border-radius: 12px;
             }

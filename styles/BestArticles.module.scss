@@ -1,7 +1,6 @@
 .bestArticleLayer {
     margin: 0 auto;
     margin-bottom: 40px;
-    // 미디어 쿼리를 통해 창크에 따른 마진 설정
 
     .bestArtitlceTitle {
         margin-bottom: 24px;
@@ -12,6 +11,7 @@
     }
     .bestArticleList {
         display: flex;
+        justify-content: center;
         gap: 24px;
             
         .bestArticle {
@@ -24,6 +24,60 @@
             .bestIcon {
                 margin-bottom: 16px;
             }
+            .articleData {
+                .articleDescription {
+                  display: flex;
+                  gap: 8px;
+                  justify-content: space-between;
+                  margin-bottom: 18px;
+                  .articleTitle {
+                    font-size: 20px;
+                    font-weight: 600;
+                    line-height: 32px;
+                    color: #1f2937;
+                    margin-right: 8px;
+                  }
+                  .articleImg {
+                    width: 72px;
+                    height: 72px;
+                    border-radius: 6px;
+                    background-color: white;
+                    border: solid 1px var(--cool-Gray200);
+                    position: relative;
+                  }
+                  .blankImage {
+                    width: 72px;
+                    height: 72px;
+                    background-color: black;
+                  }
+                }
+                .articleInfo {
+                  display: flex;
+                  justify-content: space-between;
+              
+                  .userIcon {
+                    margin-right: 8px;
+                  }
+              
+                  p {
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    color: #4b5563;
+                  }
+                  div {
+                    display: flex;
+                    align-items: center;
+                    p {
+                      margin-right: 8px;
+                    }
+                    img {
+                      margin-right: 4px;
+                    }
+                  }
+                }
+              }
+              
         }
     }
 }

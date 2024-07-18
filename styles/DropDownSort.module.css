@@ -5,6 +5,7 @@
     padding: 12px 20px;
     border: 1px var(--cool-Gray200) solid;
     color: var(--cool-Gray800);
+    position: relative;
 }
 
 /* 모바일버전 */
